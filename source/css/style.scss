@@ -1,0 +1,127 @@
+/********************************
+* CONFIG VARIABLES
+********************************/
+$font-family: sans-serif;
+$font-size: 15px;
+$link-color: #0072bb;
+$background-color: #ffffff;
+$content-background-color: #ffffff;
+$email-width: 600px;
+$gutter-width: 20px;
+$content-width: $email-width - (2 * $gutter-width);
+$footer-height: 80px;
+$footer-font-size: 12px;
+$footer-color: #c2c2c2;
+$footer-link-color: $link-color;
+
+
+/********************************
+* STYLES
+********************************/
+body {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    line-height: 1.4;
+    font-size: $font-size;
+    background: $background-color;
+}
+a {
+    color: $link-color;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Don't forget to set a hover color! */
+a:hover { color: $link-color;}
+
+img {
+    outline: none;
+    text-decoration: none;
+    -ms-interpolation-mode: bicubic;
+}
+
+a img {
+    display: block;
+    border: none;
+}
+
+.wrapper {
+    width: 100%;
+    background: $background-color;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper-inner {
+    width: $email-width;
+    background: $content-background-color;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    width: 100%;
+}
+
+.header a {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    width: auto;
+}
+
+.header a img {
+    display: block;
+    outline: none;
+    border: 0;
+}
+.gutter {
+    width: $gutter-width;
+}
+.content {
+    width: $content-width;
+    font-family: $font-family;
+}
+
+.content img {
+    max-width: 100%;
+}
+.footer {
+    background: #ffffff;
+    padding: 0;
+    width: $email-width;
+    height: $footer-height;
+}
+.footer p {
+    color: $footer-color;
+    line-height: 1.4;
+    font-size: $footer-font-size;
+    
+}
+.footer a {
+    color: $footer-link-color;
+    text-decoration: underline;
+    font-weight: normal;
+}
+.social {
+    text-align: right;
+}
+.social a img {
+    display: inline;
+}
+
+.spacer {
+    padding-top: 8px;
+    padding-bottom: 7px;
+    line-height: 0;
+}
+
+/* =========================== */
+/* = Outlook 2007/2010 Fixes = */
+/* =========================== */
+table td { border-collapse: collapse; }
