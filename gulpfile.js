@@ -47,9 +47,7 @@ gulp.task('images', function(){
 
 gulp.task('templates', ['main_styles', 'responsive_styles'], function(){
   gulp.src(source + '*.jade')
-    .pipe(jade({
-
-    }))
+    .pipe(jade({}))
       .on('error', handleError)
       .on('error', notify.onError())
     .pipe(inlineCss({
