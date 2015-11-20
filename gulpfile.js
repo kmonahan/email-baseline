@@ -50,18 +50,25 @@ gulp.task('templates', ['main_styles', 'responsive_styles'], function(){
     .pipe(jade({}))
       .on('error', handleError)
       .on('error', notify.onError())
+    .pipe(gulp.dest(dist));
+});
+
+gulp.task('inline', ['templates'], function(){
+  gulp.src(dist + 'template.html')
     .pipe(inlineCss({
       applyStyleTags: false,
       applyLinkTags: true,
       removeLinkTags: true,
       removeStyleTags: false
     }))
+      .on('error', handleError)
+      .on('error', notify.onError())
     .pipe(gulp.dest(dist));
 });
 
 gulp.task('default', function(){
-  gulp.watch([source + '*.jade', source + 'css/*'], ['templates']);
+  gulp.watch([source + '*.jade', source + 'css/*'], ['inline']);
   gulp.watch(source+'img/*', ['images']);
 });
 
-gulp.task('build', ['templates']);
+gulp.task('build', ['inline']);
